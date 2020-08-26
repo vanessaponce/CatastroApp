@@ -3,14 +3,13 @@ $(document).ready(function () {
 
 });
 
-function showCuenta(){
+function showCuenta() {
     $.ajax({
         type: "ajax",
         url: "personas/showCuenta",
         async: false,
         dataType: "JSON",
         success: function (data) {
-            console.log(data);
             if (data != true) {
                 for (i = 0; i < data.length; i++) {
                     $('#identificacion').text(data[i].IDENTIFICACION);
@@ -25,3 +24,21 @@ function showCuenta(){
         }
     });
 }
+
+$('#btnDeshabilitar').click(function () {
+    $.ajax({
+        type: "ajax",
+        url: "personas/deshabilitarCuenta",
+        async: false,
+        dataType: "JSON",
+        success: function (data) {
+            if (data == true) {
+                toastr.success("Cuenta Deshabilitada.");
+
+                setTimeout("window.location = 'salir';", 3000);
+            } else {
+                toastr.warning(data);
+            }
+        }
+    });
+});

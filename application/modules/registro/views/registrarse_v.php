@@ -18,7 +18,7 @@
 <body class="text-center">
 
 <nav class="navbar navbar-dark bg-primary fixed-top">
-  <h5>GPL MÓVIL</h5>
+  <h5>Catastro Hogar</h5>
   <a href="<?php echo base_url('login') ?>" class="navbar-text">
       Inicio
 </a>
@@ -55,7 +55,7 @@
         <input type="hidden" name="id" id="id" class="form-control">
         <input type="email" id="email" name="email" class="form-control" placeholder="Correo electrónico" required ><br>
         <input type="email" id="email2" name="email2" class="form-control" placeholder="Correo electrónico (repetir)" required ><br>
-        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Teléfono" required ><br>
+        <input type="tel" id="telefono" minlength="9" maxlength="10" name="telefono" class="form-control" placeholder="Teléfono" required ><br>
 
         <div class="form-group row justify-content-center">
             <a class="col-5 btn btn-lg btn-secondary" href="<?php echo base_url('registro') ?>">Cancelar</a>

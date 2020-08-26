@@ -7,7 +7,7 @@ $('#btnGestionH').click(function () {
     window.location.href = "hogares";
 });
 $('#btnReportes').click(function () {
-    window.location.href = "reportes/reportes";
+    window.location.href = "reportes";
 });
 $('#btnMiCuenta').click(function () {
     window.location.href = "personas/cuenta";

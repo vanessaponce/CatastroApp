@@ -89,7 +89,7 @@
             <div class="form-group row justify-content-center">
                 <button class="col-5 btn btn-lg btn-secondary" id="btnCancelar">Cancelar</button>
                 <p class="col-1">&nbsp;</p>
-                <button class="col-5 btn btn-lg btn-primary" id="btnGuardar" type="submit">Aceptar</button>
+                <button class="col-5 btn btn-lg btn-primary" id="btnGuardar" type="button">Aceptar</button>
             </div>
         </div>
         </form>

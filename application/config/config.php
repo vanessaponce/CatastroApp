@@ -26,10 +26,6 @@ date_default_timezone_set('America/Guayaquil');
 $protocol = is_https() ? 'https://' : 'http://';
 $config['base_url'] = $protocol.$_SERVER['HTTP_HOST'].'/';
 
-/*Google captcha*/
-$config['google_key'] = '6LcvHbMUAAAAAKh8eQfhKO9-V8sKSdSUHuuFYquQ';
-$config['google_secret'] = '6LcvHbMUAAAAAHBQHt8at3ZOaBel6Us_WDEjGxa5';
-
 /*
 |--------------------------------------------------------------------------
 | Index File

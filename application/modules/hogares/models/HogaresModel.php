@@ -91,7 +91,7 @@ class HogaresModel extends CI_Model
         $result = $this->db->query('UPDATE Hogar SET SUMINISTRO_ELEC = ' . '"' . $suministro . '", CALEFON = ' . '"' . $calefon . '", COCINA = ' . '"' . $cocina . '", SECADORA = ' . '"' . $secadora . '"  WHERE ID_HOGAR = '.$hogar.' ');
         $result = $this->db->query('UPDATE Ubicacion SET PROVINCIA = ' . '"' . $provincia . '", CANTON = ' . '"' . $canton . '",PARROQUIA = ' . '"' . $parroquia . '", DIRECCION = ' . '"' . $direccion . '" WHERE ID_UBICACION = '.$idUbicacion.' ');
         
-        return $result->result();
+        return $result;
     }
 
 }

@@ -18,7 +18,7 @@
 <body class="text-center">
 
 <nav class="navbar navbar-dark bg-primary fixed-top">
-  <h5>GPL MÓVIL</h5>
+  <h5>Catastro Hogar</h5>
   <a href="<?php echo base_url('personas') ?>" class="navbar-text">
       Inicio
 </a>
@@ -26,11 +26,11 @@
 <main role="main" class="pt-5 container">
 <div class="pt-3 row">
     <div class="col">
-        <h5 id="pasos">Actualizar contraseña</h5>
+        <h5 id="pasos">Cambiar Contraseña</h5>
     </div>
 </div>
 <div class="p-3 justify-content-center align-self-center" >
-    <form id="registrarPersona" action="" method="post" oninput='passNuevo2.setCustomValidity(passNuevo2.value != passNuevo1.value ? "Las contraseñas no son iguales." : "")'>
+    <form id="cambiarPass" action="" method="post" oninput='passNuevo2.setCustomValidity(passNuevo2.value != passNuevo1.value ? "Las contraseñas no son iguales." : "")'>
         <div class="form-group row text-left">
             <div class="col">
                 <div class="font-weight-bold">Contraseña actual </div>
@@ -55,7 +55,7 @@
         <div class="form-group row justify-content-center">
             <a class="col-5 btn btn-lg btn-secondary" href="<?php echo base_url('personas') ?>">Cancelar</a>
             <p class="col-1">&nbsp;</p>
-            <button class="col-5 btn btn-lg btn-primary" id="registrar" type="subbmit">Aceptar</button>
+            <button class="col-5 btn btn-lg btn-primary" id="actualizar" type="button">Cambiar</button>
         </div>
     </form>
 </div>

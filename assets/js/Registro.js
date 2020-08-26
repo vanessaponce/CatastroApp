@@ -61,13 +61,15 @@ $('#registrarPersona').submit('click', function () {
                 $('#id').val('');
                 $('#email').val('');
 
-                $('#pasos').text('Paso 1: Buscar Persona');
+                /*$('#pasos').text('Paso 1: Buscar Persona');
                 $('#buscarPersona').css('visibility', 'visible');
                 $('#buscarPersona').css('display', 'block');
                 $('#resultadoPersona').css('visibility', 'hidden');
-                $('#resultadoPersona').css('display', 'none');
+                $('#resultadoPersona').css('display', 'none');*/
 
-                toastr.success('Registro exito. \nVerifique el correo '.mail);
+                toastr.success('Registro exito. \n Verifique el correo ' + mail);
+                
+                setTimeout("window.history.back();",4000);
             } else {
                 toastr.warning(data);
             }

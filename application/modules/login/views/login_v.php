@@ -28,7 +28,7 @@ if (validation_errors()) {
     <?php }
 ?>
 <nav class="navbar navbar-dark bg-primary fixed-top">
-  <h5>GPL MÓVIL</h5>
+  <h5>Catastro Hogar</h5>
 </nav>
 <br>
 <br>

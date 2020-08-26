@@ -33,9 +33,9 @@ class Personas extends MY_Controller
     {
         $this->load->view('personas/pass_v');
     }
-    public function cancelar()
+    public function salir()
     {
-        $this->load->view('personas/pass_v');
+        $this->load->view('login/login_v');
     }
 
     //PERSONAS
@@ -78,6 +78,18 @@ class Personas extends MY_Controller
     public function bajaPersona()
     {
         $data = $this->personasModel->bajaPersona();
+        echo json_encode($data);
+    }
+
+    public function cambiarPass()
+    {
+        $data = $this->personasModel->cambiarPass();
+        echo json_encode($data);
+    }
+
+    public function deshabilitarCuenta()
+    {
+        $data = $this->personasModel->deshabilitarCuenta();
         echo json_encode($data);
     }
 

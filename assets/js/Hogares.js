@@ -50,7 +50,6 @@ function showProvincia() {
         async: false,
         dataType: "JSON",
         success: function (data) {
-            console.log(data);
             var html = '<option value="">- Seleccione -</option>';
             var i;
             if (data != true) {
@@ -71,7 +70,6 @@ function showCanton() {
         async: false,
         dataType: "JSON",
         success: function (data) {
-            console.log(data);
             var html = '<option value="">- Seleccione -</option>';
             var i;
             if (data != true) {
@@ -92,7 +90,6 @@ function showParroquia() {
         async: false,
         dataType: "JSON",
         success: function (data) {
-            console.log(data);
             var html = '<option value="">- Seleccione -</option>';
             var i;
             if (data != true) {
@@ -119,7 +116,6 @@ $('#provincia').change(function () {
             provincia: provincia
         },
         success: function (data) {
-            console.log(data);
             var html = '<option value="">- Seleccione -</option>';
             var i;
             if (data != true) {
@@ -145,7 +141,6 @@ $('#canton').change(function () {
             canton: canton
         },
         success: function (data) {
-            console.log(data);
             var html = '<option value="">- Seleccione -</option>';
             var i;
             if (data != true) {
@@ -167,7 +162,6 @@ function showHogar() {
         async: false,
         dataType: "JSON",
         success: function (data) {
-            console.log(data);
             if (data != true) {
                 for (i = 0; i < data.length; i++) {
                     $('#suministro').val(data[i].SUMINISTRO_ELEC);
@@ -187,7 +181,7 @@ function showHogar() {
     });
 }
 
-$('#registrarHogar').submit('click', function () {
+$('#btnGuardar').click(function () {
     var suministro = $('#suministro').val();
     var provincia = $('#provincia').val();
     var canton = $('#canton').val();
@@ -202,35 +196,39 @@ $('#registrarHogar').submit('click', function () {
     var secadora = 0;
     if ($('#secadora').is(":checked")) { secadora = 1; }
 
-    $.ajax({
-        type: "POST",
-        url: "hogares/registrarHogar",
-        dataType: "JSON",
-        data: {
-            hogar: hogar,
-            suministro: suministro,
-            provincia: provincia,
-            canton: canton,
-            parroquia: parroquia,
-            direccion: direccion,
-            calefon: calefon,
-            cocina: cocina,
-            secadora: secadora
-        },
-        success: function (data) {
-            if (data == true) {
-                toastr.success("Datos guardados.");
-                showHogar();
-            } else {
-                toastr.warning(data);
+    if (suministro == '' || provincia == '' || canton == '' || parroquia == '' || direccion == '') {toastr.warning('Complete todos los campos.'); }
+    else {
+        $.ajax({
+            type: "POST",
+            url: "hogares/registrarHogar",
+            dataType: "JSON",
+            data: {
+                hogar: hogar,
+                suministro: suministro,
+                provincia: provincia,
+                canton: canton,
+                parroquia: parroquia,
+                direccion: direccion,
+                calefon: calefon,
+                cocina: cocina,
+                secadora: secadora
+            },
+            success: function (data) {
+                if (data == true) {
+                    toastr.success("Datos guardados.");
+                    //showHogar();
+
+                    setTimeout("window.location = 'personas';", 3000);
+                } else {
+                    toastr.warning(data);
+                }
             }
-        }
-    });
+        });
+    }
 });
 
 $('#btnCancelar').click(function () {
     window.location.href = "personas";
-
 });
 
 

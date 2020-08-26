@@ -18,7 +18,7 @@
 <body class="text-center">
 
 <nav class="navbar navbar-dark bg-primary fixed-top">
-  <h5>GPL MÓVIL</h5>
+  <h5>Mi Cuenta</h5>
   <a href="<?php echo base_url('personas') ?>" class="navbar-text">
       Inicio
 </a>
@@ -50,7 +50,7 @@
 
         <input type="hidden" name="id" id="id" class="form-control">
 
-        <button id="btnBuscar" class="btn btn-lg btn-danger btn-block" type="button">Eliminar Cuenta</button><br>
+        <button id="btnDeshabilitar" class="btn btn-lg btn-danger btn-block" type="button">Deshabilitar Cuenta</button><br>
     </form>
 </div>
 

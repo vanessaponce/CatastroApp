@@ -88,4 +88,32 @@ class PersonasModel extends CI_Model
         return $result;
     }
 
+    public function deshabilitarCuenta()
+    {
+        $session_data = $this->session->userdata('logged_in');
+        $id = $session_data['ID_USUARIO'];
+
+        $result = $this->db->query('UPDATE Usuario SET ESTADO = 0 WHERE ID_USUARIO = ' . $id . '');
+
+        return $result;
+    }
+
+    public function cambiarPass()
+    {
+        $session_data = $this->session->userdata('logged_in');
+        $id = $session_data['ID_USUARIO'];
+
+        $passActual = $this->input->post('passActual');
+        $passNuevo = $this->input->post('passNuevo');
+
+        $valPass = $this->db->query('SELECT * FROM Usuario WHERE ID_USUARIO = ' . $id . ' AND CONTRASENIA = ' . '"' . md5($passActual) . '"');
+
+        if ($valPass->num_rows() == 1) {
+            $result = $this->db->query('UPDATE Usuario SET CONTRASENIA = ' . '"' . md5($passNuevo) . '" WHERE ID_USUARIO = ' . $id . '');
+            return $result;
+        } else {
+            return 'Contraseña actual errónea.';
+        }
+    }
+
 }
